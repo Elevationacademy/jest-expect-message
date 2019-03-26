@@ -31,7 +31,7 @@ const wrapMatcher = (matcher, customMessage) => {
         throw new JestAssertionError(matcherResult, newMatcher);
       }
 
-      const message = () => customMessage;
+      const message = () => customMessage + "__stacktrace__";
 
       throw new JestAssertionError(_extends({}, matcherResult, { message }), newMatcher);
     }
